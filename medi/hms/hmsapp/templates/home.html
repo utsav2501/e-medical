@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <h1>home</h1>
+    {% block appointment %}{% endblock %}
+    <form action="/save/" method="post">
+        {%csrf_token%}
+        <label for="st_name">Name:</label>
+        <input type="text" name="st_name">
+        <label for="st_cont">Contact:</label>
+        <input type="text" name="st_cont">
+        <button type="submit">save</button>
+    </form>
+</body>
+</html>
